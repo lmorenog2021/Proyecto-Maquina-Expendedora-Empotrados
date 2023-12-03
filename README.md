@@ -66,11 +66,13 @@ byte customEUR[] = {
 ### 1. Main Loop (loop()):
 
 The main loop directs the program flow through different states: Initialization, Service, and Administration. A switch-case is used to determine the current state and call the corresponding methods.
+It also contains a watchdog to reset the machine in case of errors during execution.
 
 ```cpp
-
 void loop() {
-  switch (state) {
+  wdt_disable();
+  wdt_enable(WDTO_8S);
+  switch(state){
     case 0:
       Arranque();
       state = 1;
@@ -82,7 +84,9 @@ void loop() {
       Admin();
       break;
     default:
-      lcd.print("¡¿CÓMO?!");
+    lcd.print("HOW?!?!");
+  }
+}
   }
 }
 ```
@@ -270,7 +274,7 @@ But for the time being it's outside of the scope for this proyect.
 ## 6. View Temperature, Distance, and Counter (verTemperatura(), verDistancia(), verContador()):
 
 These methods allow the user to view real-time information (temperature, distance, or counter). The simplest methods called by Admin are simple sensor readings, to exit them we simply move the joystick to the left.
-
+A watchdog reset has been added to each while loop so that it dosent mistakenly trigger a reset if you spend too much time on a menu, but it can still reset if an error ocurs during execution.
 ```cpp
 
 void verTemperatura() {
@@ -467,6 +471,8 @@ void handleInterrupt() {
   }
 }
 ```
+## Video
+[![Watch the video](https://i.ytimg.com/vi/MHZgK8ZZBHw/maxresdefault.jpg)](https://youtu.be/UDm8I9N21GA)
 ## Sources
 [LCD Screen](https://docs.arduino.cc/learn/electronics/lcd-displays)
 
