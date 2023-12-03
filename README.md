@@ -472,7 +472,7 @@ void handleInterrupt() {
 }
 ```
 ## Video
-[![Watch the video](https://i.ytimg.com/vi/MHZgK8ZZBHw/maxresdefault.jpg)](https://youtu.be/UDm8I9N21GA)
+[![Alt text for your video](http://img.youtube.com/vi/UDm8I9N21GA/0.jpg)](http://www.youtube.com/watch?v=UDm8I9N21GA)
 ## Sources
 [LCD Screen](https://docs.arduino.cc/learn/electronics/lcd-displays)
 
