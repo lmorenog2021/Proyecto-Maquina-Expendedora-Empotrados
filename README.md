@@ -24,16 +24,17 @@ For this proyect we are going to need:
    
 7. Button:
 
-  A button to enter admin mode
+    A button to enter admin mode
   
 8. Potentiometer:
+   
     To control the dimness of the LCD screen
 
-9. Arduino UNO:
+10. Arduino UNO:
    
     You can also use a MEGA board or similar, but any board smaller than a UNO wont have enough pins to follow this tutorial and will require more tinkering.
     
-10. Breadboard:
+11. Breadboard:
     
     A big one fit all our components comfortably
 
